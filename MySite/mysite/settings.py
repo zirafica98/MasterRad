@@ -29,11 +29,13 @@ DEBUG = True
 # ALLOWED_HOSTS = ['127.0.0.1']
 GEOIP_PATH =os.path.join(BASE_DIR, 'geoip/')
 
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -44,7 +46,9 @@ INSTALLED_APPS = [
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
     'django_user_agents',
-    'tracking_analyzer'
+    'tracking_analyzer',
+    'account.apps.AccountConfig',
+    'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +61,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_user_agents.middleware.UserAgentMiddleware',
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 CACHES = {
@@ -155,6 +161,3 @@ BRAINTREE_CONF = braintree.Configuration(
     BRAINTREE_PUBLIC_KEY,
     BRAINTREE_PRIVATE_KEY
 )
-
-#Activate Django-Heroku.
-# django_heroku.settings(locals())
