@@ -29,7 +29,7 @@ DEBUG = True
 # ALLOWED_HOSTS = ['127.0.0.1']
 GEOIP_PATH =os.path.join(BASE_DIR, 'geoip/')
 
-LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 

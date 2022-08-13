@@ -6,7 +6,7 @@
 </head>
 <body>
   <div id="header">
-      <span class="logo">Innova shop</span>
+      <a href="/" class="logo">Innova shop</a>
       {% if request.user.is_authenticated %}
       <ul class="menu">
         <li {% if section == "dashboard" %} class="selected" {% endif %}>
