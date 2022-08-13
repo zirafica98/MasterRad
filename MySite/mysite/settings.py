@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'tracking_analyzer',
     'account.apps.AccountConfig',
     'django.contrib.admin',
+    'django_user_interaction_log',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,11 @@ MIDDLEWARE = [
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+DJANGO_USER_INTERACTION_LOG_SETTINGS = {
+    'sensitive_test_cases': True,
+    'user_representer_field': '__str__',
+    'list_paginated_by': 100,
+}
 
 CACHES = {
     'default': {
